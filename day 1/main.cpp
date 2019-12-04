@@ -21,33 +21,27 @@ auto readLines(const std::string& fileName, F parser) {
     return vec;
 }
 
+namespace part1 {
+    int64_t fuel(int64_t mass) {
+        return (mass / 3) - 2;
+    }
 
-int64_t fuel(int64_t mass) {
-    return (mass / 3) - 2;
+    void run() {
+        const auto lines = readLines("../input1.txt"s, [](const std::string& str) { return fuel(std::stoi(str)); });
+
+        const auto sum = std::accumulate(lines.begin(), lines.end(), 0ll);
+
+        std::cout << sum << '\n';
+    }
 }
 
-int main() {
-    const auto lines = readLines("../input.txt"s, [](const std::string& str) { return fuel(std::stoi(str));});
+namespace part2 {
 
-    const auto sum = std::accumulate(lines.begin(), lines.end(), 0ll);
-
-    std::cout << sum << '\n';
 }
 
 
-
-/*#include <math.h>
-#include <stdio.h>
-
 int main() {
-    //for (int i = 1; i <= 10; i++) {
-    //    printf("%d %d\n", i, i * 2);
-    //}
 
-    //double r;
-    //printf("Enter radius of circle: ");
-    //scanf("%lf", &r);
-    //printf("The area of the circle is %.2f", M_PI * r * r);
-}*/
+}
 
 
