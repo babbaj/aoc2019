@@ -26,7 +26,7 @@ auto readLines(const std::string& fileName, F parser) {
 
 template<typename T, typename F>
 auto map(const std::vector<T> vec, F func) {
-    using U = decltype(func(std::declval<T>()));
+    using U = std::invoke_result_t<F, T>;
     std::vector<U> out;
     out.reserve(vec.size());
     std::transform(vec.begin(), vec.end(), std::back_inserter(out), std::move(func));
