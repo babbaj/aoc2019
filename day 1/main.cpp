@@ -40,7 +40,7 @@ int fuel(int mass) {
 
 namespace part1 {
     void run() {
-        const auto lines = readLines("../input1.txt", [](const std::string& str) { return std::stoi(str); });
+        const auto lines = readLines("../input.txt", [](const std::string& str) { return std::stoi(str); });
         const auto computed = map(lines, fuel);
 
         const auto sum = std::accumulate(lines.begin(), lines.end(), 0ll);
@@ -59,7 +59,7 @@ namespace part2 {
 
 
     void run() {
-        const auto masses = readLines("../input2.txt", [](const std::string& str) { return std::stoi(str); });
+        const auto masses = readLines("../input.txt", [](const std::string& str) { return std::stoi(str); });
         const std::vector<int> computed = map(masses, recursiveFuel);
 
         const auto sum = std::accumulate(computed.begin(), computed.end(), 0ll);
